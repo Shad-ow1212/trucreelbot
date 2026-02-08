@@ -21,8 +21,8 @@ COMMANDS = {
     "kys" : "commands.shutdown",
     "stat" : "commands.stat"
 }
-SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hello", "hewo", "re "]
-REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "hello", "re"]
+SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "re "]
+REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re"]
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
@@ -56,6 +56,9 @@ async def on_message(message):
     
     if any(rep in message.content.lower() for rep in SALUTATIONS):
         await message.channel.send(f"{salut.sentence(random.choice(REPONSES))}")
+    
+    if "hello" in message.content.lower():
+        await message.channel.send(f"{salut.hello()}")
     
     if not message.content.startswith("!"):
         return
