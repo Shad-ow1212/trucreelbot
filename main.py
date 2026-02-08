@@ -14,7 +14,6 @@ intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-
 COMMANDS = {
     "test": "commands.test",
     "crève" : "commands.shutdown",
@@ -34,6 +33,13 @@ bot.db = db
 register_message_listener(bot, counter)
 
 OWNER_ID = 712600626223120478
+
+def getToken(file):
+    f = open(file)
+    token = f.read()
+    f.close()
+    return token
+
 
 @bot.event
 async def on_ready():
@@ -79,4 +85,5 @@ async def on_message(message):
 
     await module.run(bot, message, args)
 
-bot.run("jaaj")
+
+bot.run(getToken("token.txt"))
