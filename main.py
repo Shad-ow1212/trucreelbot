@@ -20,7 +20,7 @@ COMMANDS = {
     "kys" : "commands.shutdown",
     "stat" : "commands.stat"
 }
-SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "re "]
+SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo"]
 REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re"]
 
 from autocommands.database import Database
