@@ -1,0 +1,4 @@
+TODO : 
+- faire un help, qui récupère toutes les commandes et qui donne une mini description. Ca implique euuh jsp mais je kifferais bien s'il s'update auto quoi x)
+- faire des commandes pour ajouter et enlever des elements dans les différents csv
+- ajouter des commandes hein mdr
