@@ -7,6 +7,7 @@ discord.opus._load_default()
 from discord.ext import commands
 
 import autocommands.salut as salut
+import autocommands.reacts as reacts
 salut.init()
 
 intents = discord.Intents.default()
@@ -18,10 +19,11 @@ COMMANDS = {
     "test": "commands.test",
     "crève" : "commands.shutdown",
     "kys" : "commands.shutdown",
+    "sleep" : "commands.shutdown",
     "stat" : "commands.stat"
 }
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo"]
-REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re"]
+REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey"]
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
@@ -50,7 +52,7 @@ async def on_ready():
 
     for guild in bot.guilds:
         if guild.text_channels:
-            channel = guild.text_channels[0]
+            channel = guild.text_channels[4]
             await channel.send("Salut :3")
             break
 
@@ -60,11 +62,16 @@ async def on_message(message):
     if message.author.bot:
         return
     
-    if any(rep in message.content.lower() for rep in SALUTATIONS):
+    if any(rep in message.content.lower().split() for rep in SALUTATIONS):
         await message.channel.send(f"{salut.sentence(random.choice(REPONSES))}")
     
     if "hello" in message.content.lower():
         await message.channel.send(f"{salut.hello()}")
+    
+    if "npac" in message.content.lower():
+        reactArray = reacts.react("npac")
+        for i in reactArray:
+            await message.add_reaction(i)
     
     if not message.content.startswith("!"):
         return
