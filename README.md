@@ -24,7 +24,8 @@ Voici la liste des commandes utilisables avec ce bot. Le préfixe par défaut es
 mots clés des commandes, dans main.py.  
     - *test* : Retourne "Ok ! Tout marche :3" si le bot est fonctionnel  
     - *crève*/*kys*/*sleep* : Eteint le bot  
-    - *stat* : Retourne "[pseudo de l'utilisateur] a envoyé [x] messages sur ce serveur :D"  
+    - *stat* : Retourne "[pseudo de l'utilisateur] a envoyé [x] messages sur ce serveur :D"
+    - *editcsv* : permet la modification des fichiers .csv dans /data/csv. L'arg 0 permet de choisir les modification apporté (add, display ou delete). L'arg 1 doit donner le nom *SANS L'EXTENSION* du fichier .csv souhaité. Pour display, aucun autre argument n'est requis. Pour add, il suffit d'indiquer ensuite ce que vous voulez ajouter (aucune mise en format n'est nécessaire). Pour delete, il suffit de mettre l'index *STRICTEMENT POSITIF* de l'élément que vous souhaitez supprimer. Pour aider, l'index de chaque ligne du csv est écrit lors d'un "[!editcsv display nom_du_ficher]".
 Il existe également plusieurs "autocommandes" qui sont au nombre de 2 pour l'instant :  
     - La méthode autocommands.reacts.react(*string*) :  
         Retourne une liste d'emojis lettres (si le mot n'a pas de répétitions), permettant d'ajouter ces réactions à un message  
@@ -35,6 +36,7 @@ Il existe également plusieurs "autocommandes" qui sont au nombre de 2 pour l'in
 
 
 ## 3. Contribution
+
 
 
 
