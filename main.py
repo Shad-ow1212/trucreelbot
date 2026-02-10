@@ -3,6 +3,7 @@ import importlib
 import random
 import discord
 import discord.opus
+import re
 discord.opus._load_default()
 from discord.ext import commands
 
@@ -22,8 +23,8 @@ COMMANDS = {
     "sleep" : "commands.shutdown",
     "stat" : "commands.stat"
 }
-SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo"]
-REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey"]
+SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "bonjoir", "bonjoouj"]
+REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
@@ -52,7 +53,7 @@ async def on_ready():
 
     for guild in bot.guilds:
         if guild.text_channels:
-            channel = guild.text_channels[4]
+            channel = guild.text_channels[7]
             await channel.send("Salut :3")
             break
 
@@ -62,7 +63,8 @@ async def on_message(message):
     if message.author.bot:
         return
     
-    if any(rep in message.content.lower().split() for rep in SALUTATIONS):
+    #cette ligne est infernale mais j'ai pas trouvé mieux. Permet de considérer aussi les mots 
+    if any(rep in re.sub('[!,.?]', '', i) for i in message.content.lower().split() for rep in SALUTATIONS):
         await message.channel.send(f"{salut.sentence(random.choice(REPONSES))}")
     
     if "hello" in message.content.lower():
