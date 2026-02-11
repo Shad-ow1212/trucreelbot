@@ -1,9 +1,10 @@
 import csv
 import os
+from config import TIMERS
 
 async def run(bot, message, args):
     if args[0] == "csv":
-        if not args or len(args) < 3:
+        if len(args) - 1 < 2:
             await message.channel.send("Hum... tu as oublié un truc je crois haha x)")
             return
         liste_csv = []
