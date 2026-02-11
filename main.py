@@ -32,6 +32,9 @@ REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "
 MOTSREACTIONS = {"npac": "npac",
                  "prout": "prout"}
 
+from autocommands.message_timer import Timer
+GPERDU = Timer(5, "J'ai perdu")
+
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
 from listeners.message_listener import register_message_listener
@@ -69,6 +72,8 @@ async def on_message(message):
     if message.author.bot:
         return
     
+    await GPERDU.verif(message)
+
     #cette ligne est infernale mais j'ai pas trouvé mieux. Permet de considérer aussi les mots 
     if any(rep in re.sub('[!,.?]', '', i) for i in message.content.lower().split() for rep in SALUTATIONS):
         await message.channel.send(f"{salut.sentence(random.choice(REPONSES))}")
