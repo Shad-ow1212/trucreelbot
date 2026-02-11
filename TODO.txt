@@ -1,4 +1,5 @@
 TODO : 
 - faire un help, qui récupère toutes les commandes et qui donne une mini description. Ca implique euuh jsp mais je kifferais bien s'il s'update auto quoi x)
 - permettre au bot d'envoyer des embeds, je trouve ca trop cool et carrément plus joli qu'un simple message haha
+- modifier le main.py pour qu'il puisse react à une liste de mots plutot qu'à un mot en particulier
 - ajouter des commandes hein mdr
