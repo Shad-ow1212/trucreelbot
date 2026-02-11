@@ -32,7 +32,7 @@ REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "
 MOTSREACTIONS = {"npac": "npac",
                  "prout": "prout"}
 
-from autocommands.message_timer import Timer
+from autocommands.timer import Timer
 TIMERS = [Timer(50, "J'ai perdu")]
 
 from autocommands.database import Database

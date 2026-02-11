@@ -5,6 +5,9 @@ class Timer:
         self.seuil = seuil - 1
         self.reponse = reponse
         self.compte = 0
+
+    def __repr__(self):
+        return f"Seuil : {self.seuil+1}, reponse : {self.reponse}"
     
     def reset(self):
         self.compte = 0
