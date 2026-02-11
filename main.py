@@ -25,8 +25,12 @@ COMMANDS = {
     "editcsv" : "commands.editcsv",
     "reloadcsv" : "commands.reloadcsv"
 }
+
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "bonjoir", "bonjoouj"]
 REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
+
+MOTSREACTIONS = {"npac": "npac",
+                 "prout": "prout"}
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
@@ -71,11 +75,13 @@ async def on_message(message):
     
     if "hello" in message.content.lower():
         await message.channel.send(f"{salut.hello()}")
-    
-    if "npac" in message.content.lower():
-        reactArray = reacts.react("npac")
-        for i in reactArray:
-            await message.add_reaction(i)
+
+    for mot, react in MOTSREACTIONS.items():
+        if mot in message.content.lower():
+            reactArray = reacts.react(react)
+            for i in reactArray:
+                await message.add_reaction(i)
+
     
     if not message.content.startswith("!"):
         return
