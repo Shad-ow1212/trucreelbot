@@ -4,3 +4,4 @@ TODO :
 - modifier le main.py pour qu'il puisse react à une liste de mots plutot qu'à un mot en particulier
 - ajouter des commandes hein mdr
 - ajouter un compteur de message qui envoie j'ai perdu tout les x messages
+- faut commenter le code mdrrr
