@@ -21,19 +21,19 @@ def init():
     with open('./data/csv/inconnu.csv', mode ='r', encoding='utf-8')as file:
         file = csv.reader(file)
         for line in file:
-            inconnu.append(line[0])
+            inconnu.append(line[0].lower())
     with open('./data/csv/connu.csv', mode='r', encoding='utf-8') as file:
         file = csv.reader(file)
         for line in file:
-            connu.append(line[0])
+            connu.append(line[0].lower())
     with open('./data/csv/places.csv', mode='r', encoding='utf-8') as file:
         file = csv.reader(file)
         for line in file:
-            places.append(line[0])
+            places.append(line[0].lower())
     with open('./data/csv/ids.csv', mode='r', encoding='utf-8') as file:
         file = csv.reader(file)
         for line in file:
-            people.append(line[0])
+            people.append(line[0].lower())
 
 def sentence(slt):
     nb1 = random.randint(0, 6)
