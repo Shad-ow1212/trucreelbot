@@ -1,4 +1,5 @@
 import random
+from utils.embeds import make_embed
 
 class Timer:
     def __init__(self, seuil, reponse):
@@ -14,7 +15,7 @@ class Timer:
 
     async def verif(self, message):
         if self.compte == self.seuil:
-            await message.channel.send(self.reponse)
+            await message.channel.send(embed=make_embed(title=self.reponse))
             self.reset()
         else:
             self.compte+=1
