@@ -1,8 +1,12 @@
 import csv
 import os
 from config import TIMERS
+import autocommands.timer as timer
 
 async def run(bot, message, args):
+    if not args:
+        await message.channel.send("Euweuweu jsais pas quoi faiiiiiiire TvT")
+        return
     if args[0] == "csv":
         if len(args) - 1 < 2:
             await message.channel.send("Hum... tu as oublié un truc je crois haha x)")
@@ -56,3 +60,17 @@ async def run(bot, message, args):
         
         else:
             await message.channel.send(f"Euh... j'ai aucune commande pour {args[1]} désolé ^^'")
+    
+    if args[0] == "timer": #!edit timer add prout     !edit timer delete 3      !edit timer display
+        if args[1] == "add":
+            temp = timer.Timer(int(args[2]), " ".join(args[3:]))
+            TIMERS.append(temp)
+        if args[1] == "display":
+            temp = ""
+            i = 0
+            for t in TIMERS:
+                temp += (f"{i+1}) Nb de messages nécessaires : {t.seuil+1}, messages envoyés : {t.compte}, réponse : {t.reponse}\n")
+                i+=1
+            await message.channel.send(temp)
+        if args[1] == "delete":
+            TIMERS.pop(int(args[2]) - 1)
