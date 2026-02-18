@@ -76,6 +76,7 @@ async def run(bot, message, args):
                 await message.channel.send(f"Met un seuil positif !! >:3")
             temp = timer.Timer(int(args[2]), " ".join(args[3:]))
             TIMERS.append(temp)
+            await message.channel.send(f"C'est tout bon hehe :D")
         if args[1] == "display":
             temp = ""
             i = 0
@@ -94,5 +95,6 @@ async def run(bot, message, args):
                 await message.channel.send(f"Il faut mettre un  VRAI index :333")
                 return
             TIMERS.pop(int(args[2]) - 1) 
+            await message.channel.send(f"C'est tout bon hehe :D")
     else:
         await message.channel.send("J'ai pas de commande pour edit ;-;")
