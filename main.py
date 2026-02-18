@@ -93,7 +93,7 @@ async def on_message(message):
                 await message.add_reaction(i)
 
     
-    if not message.content.startswith("!"):
+    if not message.content.startswith(config.PREFIX):
         return
 
     parts = message.content[1:].split()
