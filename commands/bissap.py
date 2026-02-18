@@ -1,2 +1,10 @@
+from utils.embeds import make_embed
+import discord
+
 async def run(bot, message, args):
-    await message.channel.send("https://media1.tenor.com/m/PA5yt9G5v5EAAAAd/pour-juice.gif")
+    path = "data/images/bissap.gif"
+    filename = "bissap.gif"
+    
+    embed = make_embed(images=[f"attachment://{filename}"])
+
+    await message.channel.send(embed=embed, file=discord.File(path, filename=filename))

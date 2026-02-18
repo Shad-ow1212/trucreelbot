@@ -23,6 +23,7 @@ COMMANDS = {
     "crève" : "commands.shutdown",
     "kys" : "commands.shutdown",
     "sleep" : "commands.shutdown",
+    "reboot" : "commands.reboot",
     "stat" : "commands.stat",
     "edit" : "commands.edit",
     "reload" : "commands.reload",

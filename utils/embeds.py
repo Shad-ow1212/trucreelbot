@@ -8,6 +8,7 @@ def make_embed(
     description: str | None = None,
     *,
     fields: list | None = None, #elem : ["titre", "desc", boolInline]
+    images: list | None = None,
     color: int = DEFAULT_COLOR,
     footer: str | None = "Truc Réel",
     author: discord.abc.User | None = None,
@@ -29,5 +30,9 @@ def make_embed(
     if fields:
         for f in fields:
             emb.add_field(name=f[0], value=f[1], inline=f[2])
+    
+    if images:
+        for i in images:
+            emb.set_image(url=i)
 
     return emb
