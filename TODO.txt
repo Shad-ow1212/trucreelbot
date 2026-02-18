@@ -5,4 +5,6 @@ TODO :
 - ajouter des commandes hein mdr
 - ajouter un compteur de message qui envoie j'ai perdu tout les x messages
 - faut commenter le code mdrrr
+
 - faire les timers dans un .txt
+- ajouter une option qui permet d'afficher un message au hasard d'un utilisateur random si non précisé, et on peut préciser l'utilisateur qu'on veut avec le numéro de message qu'on veut ett, ça peut être très très fun
