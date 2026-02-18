@@ -36,6 +36,9 @@ async def run(bot, message, args):
             with open(f"./data/csv/{args[2]}.csv", mode ="r", encoding="utf-8")as file:
                 for i, line in enumerate(file, start=1):
                     content.append(f"{i}) {line.strip()}")
+                    if i%10 == 0:
+                        await message.channel.send("\n".join(content))
+                        content.clear()
                 await message.channel.send("\n".join(content))
                 file.close()
         
@@ -79,6 +82,9 @@ async def run(bot, message, args):
             for t in TIMERS:
                 temp += (f"{i+1}) Nb de messages nécessaires : {t.seuil+1}, messages envoyés : {t.compte}, réponse : {t.reponse}\n")
                 i+=1
+                if i%10 == 0:
+                    await message.channel.send(temp)
+                    temp = ""
             await message.channel.send(temp)
         if args[1] == "delete":
             if not args[2].isdigit():
