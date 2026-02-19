@@ -2,6 +2,7 @@ import random
 from utils.embeds import make_embed
 
 class Timer:
+    #classe qui s'appelle à chaque message envoyé, qui compte et des que le seuil est égalé (self.verif()), il le remet à 0 (self.reset()) et envoie un message
     def __init__(self, seuil, reponse):
         self.seuil = seuil - 1
         self.reponse = reponse

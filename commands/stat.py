@@ -1,6 +1,7 @@
 import discord
 
 async def run(bot, message, args):
+    #permet de lire des infos de la db... merci chat
     guild_id = message.guild.id
     
     if not args:

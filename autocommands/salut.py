@@ -15,6 +15,7 @@ hellos = ["Hello, he was insulting me.",
          "HELLO I'M ROY DISMEY HELLO I'M ROY DISMEY THANK YOU FOR HAVING ME"]
 
 def init():
+    #on efface tout dans les listes, on importe chaques lignes des .csv et on les fous dans les listes
     inconnu.clear()
     connu.clear()
     places.clear()
@@ -37,6 +38,8 @@ def init():
             people.append(line[0].lower())
 
 def sentence(slt):
+    #une chance sur 6 de passer connu en 1er elem et 5 sur 6 de passer un inconnu et une place en 2e elem
+    #de base, yavait aussi un truc qui avait 1 chance sur 6 de se déclencher et de mentionner les users, mais il est actuellement désactivé
     nb1 = random.randint(0, 6)
     nb3 = random.randint(0, len(places)-1)
     if nb1 == 0:

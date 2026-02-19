@@ -1,6 +1,7 @@
 from utils.embeds import make_embed
 
 async def run(bot, message, args):
+    #amusez vous avec les inlines mdr
     await message.channel.send(embed=make_embed(
         title="Voyons voir... :3",
         description="Effectuons un test hehe x3",

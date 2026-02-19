@@ -16,30 +16,9 @@ salut.init()
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = commands.Bot(command_prefix=PREFIX, intents=intents)
 
-COMMANDS = {
-    "test": "commands.test",
-    "crève" : "commands.shutdown",
-    "kys" : "commands.shutdown",
-    "sleep" : "commands.shutdown",
-    "reboot" : "commands.reboot",
-    "stat" : "commands.stat",
-    "edit" : "commands.edit",
-    "reload" : "commands.reload",
-    "bissap" : "commands.bissap",
-    "sixseven" : "commands.sixseven",
-    "67" : "commands.sixseven"
-}
-
-SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hewo", "bonjoir", "bonjoouj"]
-REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
-
-MOTSREACTIONS = {"npac": "npac",
-                 "prout": "prout",
-                 "femboy": "femboy"}
-
-from config import TIMERS
+from config import PREFIX, TIMERS, COMMANDS, SALUTATIONS, REPONSES, MOTSREACTIONS
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
@@ -50,9 +29,8 @@ counter = MessageCounter(db)
 bot.db = db
 register_message_listener(bot, counter)
 
-OWNER_ID = 712600626223120478
-
 def getToken(file):
+    #necessite un fichier token.txt dans l'arbo de base
     f = open(file)
     token = f.read()
     f.close()
@@ -61,6 +39,7 @@ def getToken(file):
 
 @bot.event
 async def on_ready():
+    #quand il se lance, ouvre la db et voila hein
     print(f"Connecté en tant que {bot.user} :3")
 
     await db.connect()
@@ -74,6 +53,8 @@ async def on_ready():
 
 @bot.event
 async def on_message(message):
+    #évite les bots, incrémentes les timers, trigger ou pas salut.py et les reacts, split le message en cmd(string) et args(liste) et appelle la fonction si jamais :3
+
     print(message.content)
     if message.author.bot:
         return

@@ -4,9 +4,22 @@ from config import TIMERS
 import autocommands.timer as timer
 
 async def run(bot, message, args):
+    """
+    fonction qui permet l'affichage, l'ajout et la suppression des différentes ressources utiles pour le bot (pour l'instant, uniquement les csv et les timers)
+    elle fonctionne comme ceci : +edit type_de_ressources type_de_modif args (optionnels)
+        plus précisément : 
+            +edit csv add fichier_de_destination args, avec args une chaine de caractère correspondant à l'ajout souhaité dans le fichier souhaité
+            +edit csv display fichier_de_destination
+            +edit csv delete fichier_de_destination numero_de_ligne, avec numero_de_ligne = index + 1 simplement (0 => 1, 1 => 2, etc)
+
+            +edit timer add seuil args, avec seuil un nombre entier strictement positif et args une chaine de caractère correspondant au message envoyé lors du seuil dépassé
+            +edit timer display
+            +edit timer delete numero_de_ligne, avec numero_de_ligne = index + 1 simplement (0 => 1, 1 => 2, etc)
+    """
     if not args:
         await message.channel.send("Euweuweu jsais pas quoi faiiiiiiire TvT")
         return
+    
     if args[0] == "csv":
         if len(args) - 1 < 2:
             await message.channel.send("Hum... tu as oublié un truc je crois haha x)")
