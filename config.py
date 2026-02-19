@@ -21,7 +21,8 @@ COMMANDS = {
     "reload" : "commands.reload",
     "bissap" : "commands.bissap",
     "sixseven" : "commands.sixseven",
-    "67" : "commands.sixseven"
+    "67" : "commands.sixseven",
+    "admin" : "admincommands.admin"
 }
 
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hewo", "bonjoir", "bonjoouj"]
