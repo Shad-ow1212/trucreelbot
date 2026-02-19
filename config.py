@@ -15,7 +15,6 @@ COMMANDS = {
     "crève" : "commands.shutdown",
     "kys" : "commands.shutdown",
     "sleep" : "commands.shutdown",
-    "gitpull" : "commands.gitpull",
     "reboot" : "commands.reboot",
     "stat" : "commands.stat",
     "edit" : "commands.edit",

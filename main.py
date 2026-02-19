@@ -16,9 +16,9 @@ salut.init()
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix=PREFIX, intents=intents)
-
 from config import PREFIX, TIMERS, COMMANDS, SALUTATIONS, REPONSES, MOTSREACTIONS
+
+bot = commands.Bot(command_prefix=PREFIX, intents=intents)
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
