@@ -32,7 +32,7 @@ COMMANDS = {
     "67" : "commands.sixseven"
 }
 
-SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "bonjoir", "bonjoouj"]
+SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hewo", "bonjoir", "bonjoouj"]
 REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
 
 MOTSREACTIONS = {"npac": "npac",
