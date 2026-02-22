@@ -24,6 +24,9 @@ COMMANDS = {
     "67" : "commands.sixseven",
     "admin" : "admincommands.admin"
 }
+ADMINCOMMANDS = {
+    "test": "admincommands.test",
+}
 
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hewo", "bonjoir", "bonjoouj"]
 REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
