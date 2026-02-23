@@ -21,13 +21,24 @@ async def run(bot, message, args):
         return
     
     if args[0] == "csv":
-        if len(args) - 1 < 2:
-            await message.channel.send("Hum... tu as oublié un truc je crois haha x)")
-            return
+        
         liste_csv = []
         for elem in os.listdir("./data/csv"):
             if elem.endswith(".csv"):
                 liste_csv.append(elem)
+        if args[1] == "displayall":
+            temp=""
+            i=0
+            for c in liste_csv:
+                temp+=f"{i+1}) {c}.csv\n"
+                i+=1
+            await message.channel.send("Voici la liste de tous les csv ! :3 \n" + temp)
+            return
+        
+        if len(args) - 1 < 2:
+            await message.channel.send("Hum... tu as oublié un truc je crois haha x)")
+            return
+
         if (args[2]+".csv") not in liste_csv:
             await message.channel.send("Oulah... pas de fichier correspondant :(")
             return
