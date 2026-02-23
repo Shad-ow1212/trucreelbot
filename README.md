@@ -20,8 +20,7 @@ Pour faire tourner ce bot sur votre machine, vous devez d'abord avoir un compte 
     - A partir de maintenant, pour démarrer le bot, lancer main.py avec python dans un terminal.      
 
 ## 2. Commandes   
-Voici la liste des commandes utilisables avec ce bot. Le préfixe par défaut est "!" mais il est modifiable, tout comme les 
-mots clés des commandes, dans main.py.  
+Voici la liste des commandes utilisables avec ce bot. Le préfixe par défaut est "+" mais il est modifiable dans config.py, tout comme les mots clés des commandes, dans main.py.  
     - *test* : Retourne "Ok ! Tout marche :3" si le bot est fonctionnel  
     - *crève*/*kys*/*sleep* : Eteint le bot  
     - *stat* : Retourne "[pseudo de l'utilisateur] a envoyé [x] messages sur ce serveur :D"

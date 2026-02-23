@@ -29,7 +29,12 @@ def make_embed(
     
     if fields:
         for f in fields:
-            emb.add_field(name=f[0], value=f[1], inline=f[2])
+            if len(f) == 1:
+                emb.add_field(name=f[0], value="", inline=False)
+            if len(f) == 2:
+                emb.add_field(name=f[0], value=f[1], inline=False)
+            if len(f) == 3:
+                emb.add_field(name=f[0], value=f[1], inline=f[2])
     
     if images:
         for i in images:
