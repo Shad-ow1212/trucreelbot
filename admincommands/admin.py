@@ -17,7 +17,7 @@ async def run(bot, message, args):
     cmd_name = args[0]
     args = args[1:]
 
-    if cmd_name not in config.COMMANDS:
+    if cmd_name not in config.ADMINCOMMANDS:
         await message.channel.send(f"Commande admin inconnue : `{cmd_name}` 0.0")
 
     module_name = config.ADMINCOMMANDS[cmd_name]

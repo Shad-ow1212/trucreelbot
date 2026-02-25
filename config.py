@@ -12,13 +12,8 @@ INFO = 0x96E3FF
 #dico de toutes les commandes dispo
 COMMANDS = {
     "test": "commands.test",
-    "crève" : "commands.shutdown",
-    "kys" : "commands.shutdown",
-    "sleep" : "commands.shutdown",
-    "reboot" : "commands.reboot",
     "stat" : "commands.stat",
     "edit" : "commands.edit",
-    "reload" : "commands.reload",
     "bissap" : "commands.bissap",
     "sixseven" : "commands.sixseven",
     "67" : "commands.sixseven",
@@ -26,6 +21,11 @@ COMMANDS = {
 }
 ADMINCOMMANDS = {
     "test": "admincommands.test",
+    "crève" : "admincommands.shutdown",
+    "kys" : "admincommands.shutdown",
+    "sleep" : "admincommands.shutdown",
+    "reboot" : "admincommands.reboot",
+    "reload" : "admincommands.reload",
 }
 
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hewo", "bonjoir", "bonjoouj"]
