@@ -25,11 +25,20 @@ Voici la liste des commandes utilisables avec ce bot. Le préfixe par défaut es
 * *crève*/*kys*/*sleep* : Eteint le bot   
 * *reboot* : Relance le bot (et surtout rechargetous les scripts)  
 * *stat* : Envoie le nombre de message quel'auteur de la commande. Fonctionne aussi avecles mentions.  
-* *edit* : Permet la modifications de plusieursfichiers importants pour le bot : les csv,contenant des informations utiles pour hello.pyou encore timers.py. A complêter  
+* *edit* : Permet la modifications de plusieurs fichiers d'informations pour le bot.
+    * *salut* : séléction de la catégorie : les données utiles pour salut.py
+        * *add [fichier] blablabla* : ajout de blablabla au fichier.csv (sans le ".csv")
+        * *displayall* : affiche tous les fichiers utiles pour salut.py
+        * *display [fichier]* : affiche tous les éléments du fichier précisé 
+        * *delete [fichier] [index]* : permet la supréssion de l'élément no. [index] dans le fichier
+    * *timers* : séléction de la catégorie : les données utiles pour timer.py
+        * *add [seuil] blablabla* : ajout d'un envoit programmé de blablabla tous les [seuil] messages
+        * *display* : affiche tous les timers 
+        * *delete [index]* : permet la supréssion de l'élément no. [index]
 * *bissap* : envoie un gif de bissap  
 * *sixseven*/*67* : envoie blehhh x3  
 * *admin* : vérifie les permissions del'utilisateur et permet d'executer d'autrescommandes.  
-* *admin test* : 
+    * *test* : commande simple de test pour les commandes admins pour l'instant
     
 Il existe également plusieurs "autocommandes" qui sont au nombre de 2 pour l'instant :  
 * La méthode autocommands.reacts.react(*string*) :  

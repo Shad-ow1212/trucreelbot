@@ -20,7 +20,7 @@ async def run(bot, message, args):
         await message.channel.send("Euweuweu jsais pas quoi faiiiiiiire TvT")
         return
     
-    if args[0] == "csv":
+    if args[0] == "salut":
         
         liste_csv = []
         for elem in os.listdir("./data/csv"):
@@ -30,7 +30,7 @@ async def run(bot, message, args):
             temp=""
             i=0
             for c in liste_csv:
-                temp+=f"{i+1}) {c}.csv\n"
+                temp+=f"{i+1}) {c}\n"
                 i+=1
             await message.channel.send("Voici la liste de tous les csv ! :3 \n" + temp)
             return
