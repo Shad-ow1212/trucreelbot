@@ -21,9 +21,7 @@ Pour faire tourner ce bot sur votre machine, vous devez d'abord avoir un compte 
 
 ## 2. Commandes   
 Voici la liste des commandes utilisables avec ce bot. Le préfixe par défaut est "+" mais il est modifiable dans config.py, tout comme les mots clés des commandes, dans main.py.  
-* *test* : Renvoie un embed de test, avec quelques petites infos, confirme que le bot fonctionne corectement.  
-* *crève*/*kys*/*sleep* : Eteint le bot   
-* *reboot* : Relance le bot (et surtout rechargetous les scripts)  
+* *test* : Renvoie un embed de test, avec quelques petites infos, confirme que le bot fonctionne corectement.   
 * *stat* : Envoie le nombre de message quel'auteur de la commande. Fonctionne aussi avecles mentions.  
 * *edit* : Permet la modifications de plusieurs fichiers d'informations pour le bot.
     * *salut* : séléction de la catégorie : les données utiles pour salut.py
@@ -39,6 +37,9 @@ Voici la liste des commandes utilisables avec ce bot. Le préfixe par défaut es
 * *sixseven*/*67* : envoie blehhh x3  
 * *admin* : vérifie les permissions del'utilisateur et permet d'executer d'autrescommandes.  
     * *test* : commande simple de test pour les commandes admins pour l'instant
+    * *crève*/*kys*/*sleep* : Eteint le bot   
+    * *reboot* : Relance le bot (et surtout recharge tous les scripts)
+    * *reload* : Appelle certains inits, sorte de reboot soft 
     
 Il existe également plusieurs "autocommandes" qui sont au nombre de 2 pour l'instant :  
 * La méthode autocommands.reacts.react(*string*) :  
