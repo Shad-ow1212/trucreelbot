@@ -14,26 +14,8 @@ salut.init()
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix="!", intents=intents)
-
-COMMANDS = {
-    "test": "commands.test",
-    "crève" : "commands.shutdown",
-    "kys" : "commands.shutdown",
-    "sleep" : "commands.shutdown",
-    "stat" : "commands.stat",
-    "edit" : "commands.edit",
-    "reload" : "commands.reload",
-    "bissap" : "commands.bissap"
-}
-
-SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "bonjoir", "bonjoouj"]
-REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj", "bonjouj"]
-
-MOTSREACTIONS = {"npac": "npac",
-                 "prout": "prout"}
-
-from config import TIMERS
+from config import TIMERS, PREFIX, COMMANDS, SALUTATIONS, REPONSES,MOTSREACTIONS
+bot = commands.Bot(command_prefix=PREFIX, intents=intents)
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
@@ -89,7 +71,7 @@ async def on_message(message):
                 await message.add_reaction(i)
 
     
-    if not message.content.startswith("!"):
+    if not message.content.startswith(PREFIX):
         return
 
     parts = message.content[1:].split()

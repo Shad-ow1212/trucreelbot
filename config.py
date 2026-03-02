@@ -29,7 +29,7 @@ ADMINCOMMANDS = {
 }
 
 SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hewo", "bonjoir", "bonjouj"]
-REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
+REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjouj"]
 
 MOTSREACTIONS = {"npac": "npac",
                  "prout": "prout",
