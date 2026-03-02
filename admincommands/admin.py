@@ -19,6 +19,7 @@ async def run(bot, message, args):
 
     if cmd_name not in config.ADMINCOMMANDS:
         await message.channel.send(f"Commande admin inconnue : `{cmd_name}` 0.0")
+        return 
 
     module_name = config.ADMINCOMMANDS[cmd_name]
     module = importlib.import_module(module_name)
