@@ -6,8 +6,6 @@ import discord.opus
 import re
 discord.opus._load_default()
 from discord.ext import commands
-from utils.embeds import make_embed
-import config
 
 import autocommands.salut as salut
 import autocommands.reacts as reacts
@@ -16,9 +14,26 @@ salut.init()
 intents = discord.Intents.default()
 intents.message_content = True
 
-from config import PREFIX, TIMERS, COMMANDS, SALUTATIONS, REPONSES, MOTSREACTIONS
+bot = commands.Bot(command_prefix="!", intents=intents)
 
-bot = commands.Bot(command_prefix=PREFIX, intents=intents)
+COMMANDS = {
+    "test": "commands.test",
+    "crève" : "commands.shutdown",
+    "kys" : "commands.shutdown",
+    "sleep" : "commands.shutdown",
+    "stat" : "commands.stat",
+    "edit" : "commands.edit",
+    "reload" : "commands.reload",
+    "bissap" : "commands.bissap"
+}
+
+SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hi", "hey", "hewo", "bonjoir", "bonjoouj"]
+REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj", "bonjouj"]
+
+MOTSREACTIONS = {"npac": "npac",
+                 "prout": "prout"}
+
+from config import TIMERS
 
 from autocommands.database import Database
 from autocommands.message_counter import MessageCounter
@@ -29,8 +44,9 @@ counter = MessageCounter(db)
 bot.db = db
 register_message_listener(bot, counter)
 
+OWNER_ID = 712600626223120478
+
 def getToken(file):
-    #necessite un fichier token.txt dans l'arbo de base
     f = open(file)
     token = f.read()
     f.close()
@@ -39,7 +55,6 @@ def getToken(file):
 
 @bot.event
 async def on_ready():
-    #quand il se lance, ouvre la db et voila hein
     print(f"Connecté en tant que {bot.user} :3")
 
     await db.connect()
@@ -47,14 +62,12 @@ async def on_ready():
 
     for guild in bot.guilds:
         if guild.text_channels:
-            channel = guild.text_channels[0]
+            channel = guild.text_channels[7]
             await channel.send("Salut :3")
             break
 
 @bot.event
 async def on_message(message):
-    #évite les bots, incrémentes les timers, trigger ou pas salut.py et les reacts, split le message en cmd(string) et args(liste) et appelle la fonction si jamais :3
-
     print(message.content)
     if message.author.bot:
         return
@@ -76,7 +89,7 @@ async def on_message(message):
                 await message.add_reaction(i)
 
     
-    if not message.content.startswith(config.PREFIX):
+    if not message.content.startswith("!"):
         return
 
     parts = message.content[1:].split()
