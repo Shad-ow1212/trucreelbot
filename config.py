@@ -28,7 +28,7 @@ ADMINCOMMANDS = {
     "reload" : "admincommands.reload",
 }
 
-SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hewo", "bonjoir", "bonjoouj"]
+SALUTATIONS = ["salut", "bonjour", "coucou", "bonsoir", "enchanté", "hewo", "bonjoir", "bonjouj"]
 REPONSES = ["salut", "bonjour", "coucou", "bonsoir", "re", "hey", "enchanté", "bonjoir", "bonjoouj"]
 
 MOTSREACTIONS = {"npac": "npac",
